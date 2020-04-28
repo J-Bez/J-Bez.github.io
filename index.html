@@ -92,37 +92,49 @@
     AFRAME.registerComponent('drag-rotate-component',{
       schema : { speed : {default:1}},
       init : function(){
-        this.ifMouseDown = false;
+	this.el.addEventListener('model-loaded', e=> {
+		this.ifMouseDown = false;
+        	this.x_cord = 0;
+        	this.y_cord = 0;
+        	document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
+        	document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this),false);
+        	document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);
+	});
+        /*this.ifMouseDown = false;
         this.x_cord = 0;
         this.y_cord = 0;
-        document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
-        document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
-        document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
+        document.addEventListener('touchstart',this.OnDocumentMouseDown.bind(this),false);
+        document.addEventListener('touchend',this.OnDocumentMouseUp.bind(this),false);
+        document.addEventListener('touchmove',this.OnDocumentMouseMove.bind(this),false);*/
       },
       OnDocumentMouseDown : function(event){
         this.ifMouseDown = true;
-        this.x_cord = event.clientX;
-        this.y_cord = event.clientY;
+        this.x_cord = event.touches[0].pageX;
+        this.y_cord = event.touches[0].pageY;
       },
       OnDocumentMouseUp : function(){
+	      event.preventDefault();
         this.ifMouseDown = false;
+	      
       },
       OnDocumentMouseMove : function(event)
       {
         if(this.ifMouseDown)
         {
-          var temp_x = event.clientX-this.x_cord;
-          var temp_y = event.clientY-this.y_cord;
+		event.preventDefault();
+          var temp_x = event.touches[0].pageX-this.x_cord;
+          var temp_y = event.touches[0].pageY-this.y_cord;
           if(Math.abs(temp_y)<Math.abs(temp_x))
           {
-            this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+            this.el.object3D.rotateX(temp_x*this.data.speed/100);
+		  
           }
           else
           {
-            this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+            this.el.object3D.rotateY(temp_y*this.data.speed/100);
           }
-          this.x_cord = event.clientX;
-          this.y_cord = event.clientY;
+          this.x_cord = event.touches[0].pageX;
+          this.y_cord = event.touches[0].pageY;
         }
       }
     });
