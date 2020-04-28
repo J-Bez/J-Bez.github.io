@@ -92,7 +92,7 @@
  </head>
   <body style='margin : 0px; overflow: hidden;'>
     <script type="text/javascript">
-    AFRAME.registerComponent('drag-rotate-component',{
+    /*AFRAME.registerComponent('drag-rotate-component',{
       schema : { speed : {default:1}},
       init : function(){
         this.ifMouseDown = false;
@@ -132,7 +132,7 @@
           this.y_cord = event.touches[0].pageY;
         }
       }
-    });
+    });*/
   </script>
     <div class="overlay" id="overlay">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -150,7 +150,7 @@
     <button class="playButton" id="play" onclick="startAnimation()">
       <i class="fa fa-play" style="font-size: 30px; color: white;"></i>
     </button>
-    <a-scene embedded arjs>
+    <a-scene embedded arjs vr-mode-ui="enabled: false;">
       <a-asset>
         <a-asset-item id ="animated-asset" src="./assets/model/kolo.glb" response-type="arraybuffer"></a-asset-item>
       </a-asset>
