@@ -10,7 +10,9 @@ function startAnimation() {
 	let model = document.getElementById("model");
 	if (this.model) {
 		this.model.setAttribute('animation-mixer', {loop: "once"});
-		this.model.removeAttribute('animation-mixer');
+		setTimeout(function(){
+			this.model.removeAttribute('animation-mixer');
+		}, 2000);
 	}
 }
 
