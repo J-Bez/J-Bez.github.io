@@ -15,7 +15,7 @@ function startAnimation() {
 			console.log(this.model);
     			this.model.removeAttribute('animation-mixer');
 		}
-	});
+	},{once:true});
 	if (this.model) {
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 	}
