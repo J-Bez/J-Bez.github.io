@@ -10,10 +10,14 @@ function closeNav() {
 
 function startAnimation() {
 	this.model.addEventListener('animation-finished',function() {
-		console.log(this.model);
-    		this.model.removeAttribute('animation-mixer');
+		if(this.model) {
+			console.log(this.model);
+    			this.model.removeAttribute('animation-mixer');
+		}
 	});
-	this.model.setAttribute('animation-mixer', {loop: "once"});
+	if (this.model) {
+		this.model.setAttribute('animation-mixer', {loop: "once"});
+	}
 }
 
 AFRAME.registerComponent('drag-rotate-component',{
