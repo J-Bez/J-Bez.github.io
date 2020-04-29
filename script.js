@@ -9,13 +9,13 @@ function closeNav() {
 }
 
 function startAnimation() {
-	this.model.addEventListener('animation-finished',function() {
-		console.log('ANIMATION FINISHED!');
+	this.model.addEventListener('animation-finished',function(el) {
+		console.log('ANIMATION FINISHED!', el);
 		if(this.model) {
 			console.log(this.model);
     			this.model.removeAttribute('animation-mixer');
 		}
-	},{once:true});
+	});
 	if (this.model) {
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 	}
