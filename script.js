@@ -10,6 +10,7 @@ function closeNav() {
 
 function startAnimation() {
 	this.model.addEventListener('animation-finished',function() {
+		console.log('ANIMATION FINISHED!');
 		if(this.model) {
 			console.log(this.model);
     			this.model.removeAttribute('animation-mixer');
