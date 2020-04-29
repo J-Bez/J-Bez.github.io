@@ -1,4 +1,5 @@
-let model= document.getElementById("model");
+let model = document.getElementById("model");
+console.log(this.model);
 
 function openNav() {
 	document.getElementById("overlay").style.display = "block";
@@ -10,7 +11,7 @@ function closeNav() {
 
 function startAnimation() {
 	console.log('PLAY ANIMATION')
-	model.setAttribute('animation-mixer', {loop: "once"});
+	this.model.setAttribute('animation-mixer', {loop: "once"});
 }
 
 AFRAME.registerComponent('drag-rotate-component',{
