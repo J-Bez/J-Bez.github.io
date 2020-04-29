@@ -1,6 +1,7 @@
 let model = document.getElementById("model");
+console.log('MODEL', this.model);
 let animationMixer = new THREE.AnimationMixer(this.model);
-console.log(this.animationMixer);
+console.log('MIXER', this.animationMixer);
 
 function openNav() {
 	document.getElementById("overlay").style.display = "block";
