@@ -1,8 +1,3 @@
-let model = document.getElementById("model");
-console.log('MODEL', this.model);
-let animationMixer = new THREE.AnimationMixer(this.model);
-console.log('MIXER', this.animationMixer);
-
 function openNav() {
 	document.getElementById("overlay").style.display = "block";
 }
@@ -12,15 +7,17 @@ function closeNav() {
 }
 
 function startAnimation() {
-	this.animationMixer.addEventListener('animation-finished',function(el) {
-		console.log('ANIMATION FINISHED!', el);
-		if(this.model) {
-			console.log(this.model);
-    			this.model.removeAttribute('animation-mixer');
-		}
-	});
+	let model = document.getElementById("model");
 	if (this.model) {
-		this.model.setAttribute('animation-mixer', {loop: "once"});
+		let animationMixer = new THREE.AnimationMixer(this.model);
+		console.log('MIXER', this.animationMixer);
+		this.animationMixer.addEventListener('animation-finished',function(el) {
+			console.log('ANIMATION FINISHED!', el);
+			this.model.removeAttribute('animation-mixer');
+		});
+		if (this.model) {
+			this.model.setAttribute('animation-mixer', {loop: "once"});
+		}
 	}
 }
 
