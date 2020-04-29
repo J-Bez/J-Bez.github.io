@@ -1,5 +1,4 @@
 let model = document.getElementById("model");
-console.log(this.model);
 
 function openNav() {
 	document.getElementById("overlay").style.display = "block";
@@ -11,8 +10,9 @@ function closeNav() {
 
 function startAnimation() {
 	this.model.addEventListener('animation-finished',function() {
+		console.log(this.model);
     		this.model.removeAttribute('animation-mixer');
-	},{once:true});
+	});
 	this.model.setAttribute('animation-mixer', {loop: "once"});
 }
 
