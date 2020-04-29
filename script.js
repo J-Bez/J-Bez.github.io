@@ -9,9 +9,9 @@ function closeNav() {
 function startAnimation() {
 	let model = document.getElementById("model");
 	if (this.model) {
-		let animationMixer = new THREE.AnimationMixer(this.model);
-		console.log('MIXER', this.animationMixer);
-		this.animationMixer.addEventListener('animation-finished',function(el) {
+		// let animationMixer = new THREE.AnimationMixer(this.model);
+		// console.log('MIXER', this.animationMixer);
+		this.model.addEventListener('animation-finished',function(el) {
 			console.log('ANIMATION FINISHED!', el);
 			this.model.removeAttribute('animation-mixer');
 		});
