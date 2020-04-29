@@ -1,4 +1,6 @@
 let model = document.getElementById("model");
+let animationMixer = new THREE.AnimationMixer(this.model);
+console.log(this.animationMixer);
 
 function openNav() {
 	document.getElementById("overlay").style.display = "block";
@@ -9,7 +11,7 @@ function closeNav() {
 }
 
 function startAnimation() {
-	this.model.addEventListener('animation-finished',function(el) {
+	this.animationMixer.addEventListener('animation-finished',function(el) {
 		console.log('ANIMATION FINISHED!', el);
 		if(this.model) {
 			console.log(this.model);
