@@ -9,7 +9,7 @@ function closeNav() {
 function startAnimation() {
 	let model = document.getElementById("model");
 	if (this.model) {
-		console.log(this.model);
+		this.model.setAttribure('src', "#testAsset");
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 		setTimeout(function(){
 			this.model.removeAttribute('animation-mixer');
