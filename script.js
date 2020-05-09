@@ -8,14 +8,13 @@ function closeNav() {
 
 function startAnimation() {
 	let asset = document.getElementById("animated-asset");
-	this.asset.src = "./assets/model/testGltf.glb";
-	/*let model = document.getElementById("model");
+	let model = document.getElementById("model");
 	if (this.model) {
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 		setTimeout(function(){
 			this.model.removeAttribute('animation-mixer');
 		}, 2000);
-	}*/
+	}
 	
 }
 
