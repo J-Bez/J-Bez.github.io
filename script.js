@@ -7,9 +7,9 @@ function closeNav() {
 }
 
 function startAnimation() {
-	let asset = document.getElementById("animated-asset");
 	let model = document.getElementById("model");
 	if (this.model) {
+		console.log(this.model);
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 		setTimeout(function(){
 			this.model.removeAttribute('animation-mixer');
