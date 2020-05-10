@@ -8,8 +8,10 @@ function closeNav() {
 
 function startAnimation() {
 	let model = document.getElementById("model");
+	let secModel = document.getElementById("secModel");
 	if (this.model) {
-		this.model.setAttribute('src', "#testAsset");
+		/*this.model.setAttribute('src', "#testAsset");*/
+		this.secModel.removeAttribute('position');
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 		setTimeout(function(){
 			this.model.removeAttribute('animation-mixer');
