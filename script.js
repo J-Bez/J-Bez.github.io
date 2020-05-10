@@ -10,7 +10,7 @@ function startAnimation() {
 	let model = document.getElementById("model");
 	let secModel = document.getElementById("secModel");
 	if (this.model) {
-		/*this.model.setAttribute('src', "#testAsset");*/
+		this.model.setAttribute('position', "100 0 0");
 		this.secModel.removeAttribute('position');
 		this.model.setAttribute('animation-mixer', {loop: "once"});
 		setTimeout(function(){
