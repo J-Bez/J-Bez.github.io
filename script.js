@@ -12,10 +12,12 @@ function startAnimation() {
 	if (this.model) {
 		this.model.setAttribute('position', "100 0 0");
 		this.secModel.removeAttribute('position');
-		this.model.setAttribute('animation-mixer', {loop: "once"});
+		this.secModel.setAttribute('animation-mixer', {loop: "once"});
 		setTimeout(function(){
-			this.model.removeAttribute('animation-mixer');
-		}, 2000);
+			this.secModel.removeAttribute('animation-mixer');
+			this.secModel.setAttribute('position', "100 0 0");
+			this.model.removeAttribute('position');
+		}, 5000);
 	}
 	
 }
