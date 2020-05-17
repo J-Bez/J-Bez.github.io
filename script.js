@@ -12,7 +12,8 @@ function startAnimation() {
 	if (this.model) {
 		this.model.setAttribute('position', "100 0 0");
 		this.secModel.removeAttribute('position');
-		this.secModel.setAttribute('animation-mixer', {loop: "once"});
+		this.secModel.setAttribute('animation-mixer', {clip: Take 001, loop: "once"});
+		this.secModel.setAttribute('animation-mixer', {clip: Take 003, loop: "once"});
 		setTimeout(function(){
 			this.secModel.removeAttribute('animation-mixer');
 			this.secModel.setAttribute('position', "100 0 0");
