@@ -1,4 +1,12 @@
+const Url = 'https://github.com/J-Bez/testAR/tree/master/data';
+
 function openNav() {
+	const data = {
+		msg: 'Sucess';
+	}
+	$.post(Url,data, function(data, status) {
+		console.log(`${data} and status is ${status}`);
+	});
 	document.getElementById("overlay").style.display = "block";
 }
 
