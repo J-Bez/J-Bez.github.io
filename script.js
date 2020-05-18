@@ -3,7 +3,8 @@ const Url = 'https://ar-muzej.herokuapp.com/';
 function openNav() {
 	var xmlhttp = new XMLHttpRequest();
 	const data = {
-		infoBtn: "Sucess"
+		clicked: "Info",
+		date: new Date().toLocaleString()
 	}
 	xmlhttp.open("POST", Url);
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
