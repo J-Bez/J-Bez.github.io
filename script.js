@@ -1,12 +1,16 @@
 const Url = 'https://ar-muzej.herokuapp.com/';
 
 function openNav() {
+	var xmlhttp = new XMLHttpRequest();
 	const data = {
 		infoBtn: "Sucess"
 	}
-	$.post(Url,data, function(data, status) {
+	xmlhttp.open("POST", Url);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(data));
+	/*$.post(Url,data, function(data, status) {
 		console.log(`${data} and status is ${status}`);
-	});
+	});*/
 	document.getElementById("overlay").style.display = "block";
 }
 
