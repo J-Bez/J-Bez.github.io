@@ -21,7 +21,7 @@ function closeNav() {
 	xmlhttp.send();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState==4 && this.status==200){
-			console.log(Http.responseText)
+			console.log(this.responseText)
 		}
 	}
   	document.getElementById("overlay").style.display = "none";
