@@ -78,3 +78,7 @@
     background-color: #1aa3ff;
     border: 5px solid white;
 }
+
+.infoText {
+   text-align: left;
+}
