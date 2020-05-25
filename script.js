@@ -1,4 +1,6 @@
 const Url = 'https://ar-muzej.herokuapp.com/';
+var popup = document.getElementById("myPopup");
+popup.classList.toggle("show");
 
 function openNav() {
 	var xmlhttp = new XMLHttpRequest();
