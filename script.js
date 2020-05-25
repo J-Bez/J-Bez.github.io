@@ -1,8 +1,8 @@
 const Url = 'https://ar-muzej.herokuapp.com/';
 window.onload = function() {
 	var popup = document.getElementById("myPopup");
-	if (this.popup) {
-		this.popup.classList.toggle("show");
+	if (popup) {
+		popup.classList.toggle("show");
 	}
 }
 function openNav() {
