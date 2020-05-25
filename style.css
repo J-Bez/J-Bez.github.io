@@ -66,6 +66,10 @@
 	height: 60px;
 	background-color: #1aa3ff;
 	border: 5px solid white;
+	-webkit-user-select: none;
+  	-moz-user-select: none;
+  	-ms-user-select: none;
+  	user-select: none;
 }
 
 .playButton {
