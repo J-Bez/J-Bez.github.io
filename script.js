@@ -8,7 +8,7 @@ function backBtnClicked() {
 		document.getElementById("forwardBtn").innerHtml = "Nazaj";
 	}
 	if (this.instructionsCount > 0) {
-		document.getElementById("instructionsText").innerHtml = instructions[this.instructionsCount-1];
+		document.getElementById("instructionsText").innerHTML = instructions[this.instructionsCount-1];
 		console.log(document.getElementById("instructionsText"));
 		this.instructionsCount -= 1;
 		if (this.instructionsCount == 0) {
@@ -25,16 +25,16 @@ function forwardBtnClicked() {
 		this.closeInstructions();
 	}
 	if (this.instructionsCount < 3) {
-		document.getElementById("instructionsText").innerHtml = instructions[this.instructionsCount+1];
+		document.getElementById("instructionsText").innerHTML = instructions[this.instructionsCount+1];
 		this.instructionsCount += 1;
 		if (this.instructionsCount == 3) {
-			document.getElementById("forwardBtn").innerHtml = "Zapri";
+			document.getElementById("forwardBtn").innerHTML = "Zapri";
 		}
 	}
 }
 
 function closeInstructions() {
-	document.getElementById("modal").style.display = "none";
+	document.getElementById("myModal").style.display = "none";
 	this.instructionsCount = 0;
 }
 
