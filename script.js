@@ -3,10 +3,6 @@ const instructions = ["Usmeri kamero v marker, za prikaz 3D modela.", "3D model 
 var instructionsCount = 0;
 var instructionsText;
 
-function instructionsInit() {
-	this.instructionsCount = 0;
-}
-
 function backBtnClicked() {
 	if (this.instructionsCount == 3) {
 		document.getElementById("forwardBtn").innerHtml = "Nazaj";
@@ -38,6 +34,7 @@ function forwardBtnClicked() {
 
 function closeInstructions() {
 	document.getElementById("modal").style.display = "none";
+	this.instructionsCount = 0;
 }
 
 function openNav() {
