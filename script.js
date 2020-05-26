@@ -15,6 +15,9 @@ function backBtnClicked() {
 	if (this.instructionsCount > 0) {
 		this.instructionsText.innerHtml = this.instructions[this.instructionsCount-1];
 		this.instructionsCount -= 1;
+		if (this.instructionsCount == 0) {
+			document.getElementById("backBtn").style.display = "none";
+		}
 	}
 }
 
