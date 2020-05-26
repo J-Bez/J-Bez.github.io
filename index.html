@@ -94,15 +94,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	  
  </head>
   <body style='margin : 0px; overflow: hidden;'>
-    <div class="instructionsOverlay" id="instructionsOverlay">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeInstructions()">&times;</a>  
-	  <div style="margin: 10%">
-		<h2 style="color: white; text-align: center;">NAVODILA</h2>
+    <div id="instructionsOverlay" class="instructionsOverlay">
+      <div class="instructionsBox">
+        	<span class="closeBtn">&times;</span>
+        	<h2 style="color: white; text-align: center;">NAVODILA</h2>
 		<p class="infoText">Usmeri kamero v marker za prikaz 3D modela kolesa</p>
 		<button id="myBtn">Nazaj</button>
 		<button id="myBtn">Naprej</button>
-	  </div>
-    </div>
+      </div>
+    </div>	  
     <div class="overlay" id="overlay">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
 	  <div style="margin: 10%">
