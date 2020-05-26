@@ -1,4 +1,42 @@
 const Url = 'https://ar-muzej.herokuapp.com/';
+const instructions = ["Usmeri kamero v marker, za prikaz 3D modela.", "3D model lahko vrtite s prsti po zaslonu.", "S klikom na gumb i se Vam prikažejo dodatne informacije o objektu.", "S klikom na gumb play se Vam prikaže animiran voz s kolesom."];
+var instructionsCount = 0;
+var instructionsText;
+
+function instructionsInit() {
+	this.instructionsCount = 0;
+	this.instructionsText = document.getElementById("instructionsText");
+}
+
+function backBtnClicked() {
+	if (this.instructionsCount == 3) {
+		document.getElementById("forwardBtn").innerHtml = "Nazaj";
+	}
+	if (this.instructionsCount > 0) {
+		this.instructionsText.innerHtml = this.instructions[this.instructionsCount-1];
+		this.instructionsCount -= 1;
+	}
+}
+
+function forwardBtnClicked() {
+	if (this.instructionsCount == 0) {
+		document.getElementById("backBtn").style.display="block";
+	}
+	if (this.instructionsCount == 3) {
+		this.closeInstructions();
+	}
+	if (this.instructionsCount < 3) {
+		this.instructionsText.innerHtml = this.instructions[this.instructionsCount+1];
+		this.instructionsCount += 1;
+		if (this.instructionsCount == 3) {
+			document.getElementById("forwardBtn").innerHtml = "Zapri";
+		}
+	}
+}
+
+function closeInstructions() {
+	document.getElementById("modal").style.display = "none";
+}
 
 function openNav() {
 	var xmlhttp = new XMLHttpRequest();
