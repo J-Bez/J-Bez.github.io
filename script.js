@@ -9,6 +9,7 @@ function backBtnClicked() {
 	}
 	if (this.instructionsCount > 0) {
 		document.getElementById("instructionsText").innerHtml = instructions[this.instructionsCount-1];
+		console.log(document.getElementById("instructionsText"));
 		this.instructionsCount -= 1;
 		if (this.instructionsCount == 0) {
 			document.getElementById("backBtn").style.display = "none";
