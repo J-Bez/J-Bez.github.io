@@ -126,3 +126,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.backBtn {
+	display: none;
+}
