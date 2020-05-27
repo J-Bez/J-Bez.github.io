@@ -33,6 +33,13 @@ function forwardBtnClicked() {
 	}
 }
 
+function openInstructions() {
+	this.instructionsCount = 0;
+	document.getElementById("backBtn").style.display = "none";
+	document.getElementById("instructionsText").innerHTML = instructions[0];
+	document.getElementById("myModal").style.display = "block";
+}
+
 function closeInstructions() {
 	document.getElementById("myModal").style.display = "none";
 	this.instructionsCount = 0;
