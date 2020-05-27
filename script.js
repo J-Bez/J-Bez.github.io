@@ -35,6 +35,7 @@ function forwardBtnClicked() {
 
 function openInstructions() {
 	this.instructionsCount = 0;
+	document.getElementById("forwardBtn").innerHTML = "Naprej";
 	document.getElementById("backBtn").style.display = "none";
 	document.getElementById("instructionsText").innerHTML = instructions[0];
 	document.getElementById("myModal").style.display = "block";
