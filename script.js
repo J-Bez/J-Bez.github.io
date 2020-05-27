@@ -5,7 +5,7 @@ var instructionsText;
 
 function backBtnClicked() {
 	if (this.instructionsCount == 3) {
-		document.getElementById("forwardBtn").innerHTML = "Nazaj";
+		document.getElementById("forwardBtn").innerHTML = "Naprej";
 	}
 	if (this.instructionsCount > 0) {
 		document.getElementById("instructionsText").innerHTML = instructions[this.instructionsCount-1];
